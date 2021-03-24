@@ -3,14 +3,14 @@
 echo Creating deployer directory
 echo $(ls ~/)
 
-mkdir ~/.config/dfx/identity/deployer
+# mkdir ~/.config/dfx/identity/default
 
 echo Adding identity.pem file
 
-echo $INPUT_PRIVATEKEY > ~/.config/dfx/identity/deployer/identity.pem
+echo $INPUT_PRIVATEKEY > ~/.config/dfx/identity/default/identity.pem
 
 echo $(ls ~/)
 
-dfx identity use deployer
+echo $(cat ~/.config/dfx/identity/default/identity.pem)
 
 # dfx deploy --network=ic
