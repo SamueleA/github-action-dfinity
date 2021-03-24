@@ -4,12 +4,14 @@ ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 ENV PATH="/home/node/.npm-global/bin:$PATH"
 
 USER node
-RUN sh -c 'yes | sh -ci "$(curl -fsSL https://sdk.dfinity.org/install.sh)" | killall -9 yes'
 
+COPY dfx-install.sh /home/dfx-install.sh
 COPY entrypoint.sh /home/node/entrypoint.sh
 
 USER root
 
+RUN ["chmod", "+x", "/home/dfx-install.sh"]
+
 RUN ["chmod", "+x", "/home/node/entrypoint.sh"]
 
-ENTRYPOINT ["/home/node/entrypoint.sh"]
+ENTRYPOINT ["dfx-install.sh", "/home/node/entrypoint.sh"]
