@@ -5,9 +5,12 @@ branding:
   icon: circle
   color: gray-dark
 inputs:
-  privateKey:
-    description: 'IC wallet private key for deploying the canisters'
+  identity:
+    description: 'IC identity for deploying the canisters'
     required: true
+  wallets:
+    description: 'IC wallets for deploying the canisters'
+    required: true 
 runs:
   using: 'docker'
   image: 'Dockerfile'
