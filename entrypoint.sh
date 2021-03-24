@@ -1,10 +1,9 @@
 #!/bin/sh -l
-echo here is the PK
 
-echo $INPUT_PRIVATEKEY
-echo here is the version....
+mkdir ~/.config/dfx/identity/deployer
 
-echo $(dfx --version)
+echo $INPUT_PRIVATEKEY > ~/.config/dfx/identity/deployer/identity.pem
 
-echo deploying dfx
-# dfx deploy --network=ic
+dfx identity use deployer
+
+dfx deploy --network=ic
