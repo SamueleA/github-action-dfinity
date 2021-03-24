@@ -12,6 +12,8 @@ USER root
 
 RUN ["chmod", "+x", "/home/dfx-install.sh"]
 
+RUN ["sh", "-m", "/home/dfx-install.sh"]
+
 RUN ["chmod", "+x", "/home/node/entrypoint.sh"]
 
-ENTRYPOINT ["/home/dfx-install.sh", "/home/node/entrypoint.sh"]
+ENTRYPOINT ["/home/node/entrypoint.sh"]
