@@ -10,6 +10,6 @@ jobs:
         id: deploy
         uses: ./
         with:
-          privateKey: ${{ secrets.WALLET_PRIVATE_KEY }}
+          privateKey: ${{ secrets.DFX_PRIVATE_KEY }}
       - name: Show success message
         run: echo success!
