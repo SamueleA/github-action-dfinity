@@ -3,7 +3,7 @@
 echo Creating deployer directory
 echo $(ls ~/)
 
-# mkdir ~/.config/dfx/identity/default
+mkdir ~/.config/dfx/identity/default
 
 echo Adding identity.pem file
 
