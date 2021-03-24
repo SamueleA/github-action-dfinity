@@ -10,4 +10,6 @@ COPY entrypoint.sh /home/node/entrypoint.sh
 
 USER root
 
+RUN ["chmod", "+x", "/home/node/entrypoint.sh"]
+
 ENTRYPOINT ["/home/node/entrypoint.sh"]
