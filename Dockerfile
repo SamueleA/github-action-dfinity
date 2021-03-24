@@ -10,6 +10,8 @@ COPY entrypoint.sh /home/node/entrypoint.sh
 
 USER root
 
+RUN apt-get update && apt-get install -y curl
+
 RUN ["chmod", "+x", "/home/dfx-install.sh"]
 
 RUN ["sh", "-m", "/home/dfx-install.sh"]
