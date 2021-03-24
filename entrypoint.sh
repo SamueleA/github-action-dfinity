@@ -1,9 +1,14 @@
 #!/bin/sh -l
 
 echo Creating deployer directory
-echo $(ls ~/)
 
+mkdir ~/.config
+mkdir ~/.config/dfx
+mkdir ~/.config/dfx/identity
 mkdir ~/.config/dfx/identity/default
+echo $(ls ~/)
+echo $(ls ~/.config)
+echo $(ls ~/.config/dfx/identity)
 
 echo Adding identity.pem file
 
